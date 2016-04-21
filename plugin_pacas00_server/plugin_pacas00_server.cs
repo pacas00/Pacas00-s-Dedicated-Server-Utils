@@ -67,26 +67,27 @@ namespace plugin_pacas00_server
                 try
                 {
                     triggerCounter = 0;
-                    List<NetworkServerConnection> playerConns = NetworkManager.instance.mServerThread.GetConnections();
+                    //List<NetworkServerConnection> playerConns = NetworkManager.instance.mServerThread.GetConnections();
 
-                    if (playerConns.Count > 0)
-                    {
-                        Players.clearPlayers();
-                        foreach (NetworkServerConnection conn in playerConns)
-                        {
+                    //if (playerConns.Count > 0)
+                    //{
+                    //    Players.clearPlayers();
+                    //    foreach (NetworkServerConnection conn in playerConns)
+                    //    {
 
-                            ServerConsole.DoServerString(conn.mPlayer.mUserName);
-                            if (conn.mPlayer.mbHasGameObject)
-                            {
-                                //Access to Player :D
-                                Players.addPlayer(conn.mPlayer);
-                            }
-                        }
+                    //        ServerConsole.DoServerString(conn.mPlayer.mUserName);
+                    //        if (conn.mPlayer.mbHasGameObject)
+                    //        {
+                    //            //Access to Player :D
+                    //            Players.addPlayer(conn.mPlayer);
+                    //        }
+                    //    }
 
-                    }
+                    //}
 
                     if (Settings.Instance.settings.statsEnabled == 1)
                     {
+                        WriteLine("Updating Stats");
                         GameStats.GenerateHTML();
                     }
                 }

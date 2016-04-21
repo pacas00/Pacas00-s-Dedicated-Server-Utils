@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="GameInteractingClasses\CustomConsoleCommands.cs" />
     <Compile Include="GameInteractingClasses\GameStats.cs" />
-    <Compile Include="GameInteractingClasses\Players.cs" />
     <Compile Include="GameInteractingClasses\Enums\WorldSettingsEnums.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="GameInteractingClasses\WorldSettings.cs" />

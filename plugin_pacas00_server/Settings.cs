@@ -107,6 +107,14 @@ namespace plugin_pacas00_server
                     settings.statsEnabled = Convert.ToInt32(parts[1]);
                     break;
 
+                case ("StatsSavePath"):
+                    settings.StatsSavePath = (parts[1]);
+                    break;
+
+                case ("StatsSaveFileName"):
+                    settings.StatsSaveFileName = (parts[1]);
+                    break;
+
                 default: break;
             }
         }
@@ -133,10 +141,8 @@ namespace plugin_pacas00_server
             File.Delete(plugin_pacas00_server.workingDir + Path.DirectorySeparatorChar + settingsFileName);
 
             using (TextWriter writer = File.CreateText(plugin_pacas00_server.workingDir + Path.DirectorySeparatorChar + settingsFileName))
-
                 try
                 {
-
                     {
                         writer.WriteLine("");
                         writer.WriteLine("# -----------------------------");
@@ -152,8 +158,12 @@ namespace plugin_pacas00_server
                         writer.WriteLine("#Stats - 0 is off, 1 is on. WIP ");
                         writer.WriteLine("statsEnabled" + "=" + settings.statsEnabled);
                         writer.WriteLine("");
-
-                        
+                        writer.WriteLine("#StatsSavePath - Path to save the stats page in ");
+                        writer.WriteLine("StatsSavePath" + "=" + settings.StatsSavePath);
+                        writer.WriteLine("");
+                        writer.WriteLine("#StatsSaveFileName - file name to save the stats as ");
+                        writer.WriteLine("StatsSaveFileName" + "=" + settings.StatsSaveFileName);
+                        writer.WriteLine("");                                                
                     }
                     writer.Flush();
                     writer.Close();
@@ -166,15 +176,16 @@ namespace plugin_pacas00_server
                 }
             WriteLine("Settings Saved!");
         }
-
     }
-
 
     public class SettingsObject
     {
         public string ServerName { get; set; }
         public int MaxPlayerCount { get; set; }
         public int statsEnabled { get; set; } = 0;
+
+        public string StatsSaveFileName { get; set; } = "stats.htm";
+        public string StatsSavePath { get; set; } = "$ModFolder$";
     }
 
 
