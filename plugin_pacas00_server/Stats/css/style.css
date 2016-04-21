@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	line-height: 1px;
+	height: 600px;
+	width: 400px;
+	background-color: #2b2a29;
+	color: #ded9d3;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+
+div.divSummary {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+div.divPower {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+div.divResources {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+div.divThreat {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;	
+}
+table {
+	line-height: 12px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #DED9D3;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	white-space: normal;
+	background-color: #2B2A29;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+tr {
+	color: #DED9D3;
+	text-align: center;
+	display: table-row;
+	line-height: 12px;
+	font-size: small;
+}
+td {
+	padding-top: 1px;
+	padding-right: 4px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
