@@ -8,7 +8,7 @@ namespace plugin_pacas00_server
 {
     class UtilClass
     {
-        public const string modName = "Pacas00's Server Plugin";
+        public const string modName = "Pacas00's Dedicated Server Utils";
         public const string modId = "pacas00.server";
 
         public static void WriteLine(string s)

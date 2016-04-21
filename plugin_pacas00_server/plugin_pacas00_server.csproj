@@ -50,7 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomConsoleCommands.cs" />
+    <Compile Include="GameInteractingClasses\CustomConsoleCommands.cs" />
     <Compile Include="GameInteractingClasses\GameStats.cs" />
     <Compile Include="GameInteractingClasses\Players.cs" />
     <Compile Include="GameInteractingClasses\Enums\WorldSettingsEnums.cs" />
@@ -77,10 +77,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "$(ProjectDir)modFolder\pacas00.server\1\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>del "C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\plugin_pacas00.server.dll"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

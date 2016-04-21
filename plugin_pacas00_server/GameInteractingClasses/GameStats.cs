@@ -65,7 +65,7 @@ namespace plugin_pacas00_server.GameInteractingClasses
                 .meta(new PeterCashelNet.Owin.WebpageGeneration.Options.meta_Options().http_equiv__refresh("120"))
                 .link("stylesheet", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", CrossoriginEnum.anonymous, "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7")
                 .link("stylesheet", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", CrossoriginEnum.anonymous, "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r")
-                .link("stylesheet", "https://www.dropbox.com/s/bfm5ln9kkxdeffn/style.css?dl=1")
+                .link("stylesheet", "https://raw.githubusercontent.com/pacas00/Pacas00-s-Dedicated-Server-Utils/master/plugin_pacas00_server/Stats/css/style.css")
                 .script("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", CrossoriginEnum.anonymous, "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS")
                 .script("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
                 ;
@@ -186,7 +186,7 @@ namespace plugin_pacas00_server.GameInteractingClasses
 
 
             PagePart bodydiv = new PagePart()
-                .img("https://www.dropbox.com/s/ow4fsboeta7gb2z/logo.png?dl=1", "",150,380)
+                .img("https://raw.githubusercontent.com/pacas00/Pacas00-s-Dedicated-Server-Utils/master/plugin_pacas00_server/Stats/images/logo.png", "",150,380)
                 .div(div_summary, "divSummary")
                 .div(div_Power, "divPower")
                 .div(div_Resources, "divResources");
