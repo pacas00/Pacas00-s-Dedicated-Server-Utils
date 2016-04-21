@@ -13,12 +13,12 @@ namespace plugin_pacas00_server.GameInteractingClasses
 
         public void Start()
         {
-            this.CreateCommand("resourceDifficulty", "Set World Resource Setting", CmdParameterType.String, "ResourceDifficulty");
-            this.CreateCommand("powerDifficulty", "Set World Power Setting", CmdParameterType.String, "PowerDifficulty");
+            this.CreateCommand("resourceLevel", "Set World Resource Level", CmdParameterType.String, "ResourceDifficulty");
+            this.CreateCommand("powerLevel", "Set World Power Level", CmdParameterType.String, "PowerDifficulty");
             this.CreateCommand("dayNightCycle", "Set Day/Night Cycle", CmdParameterType.String, "DayNightCycle");
             this.CreateCommand("convSpeed", "Set Conveyor Speed", CmdParameterType.String, "ConvSpeed");
             this.CreateCommand("mobDifficulty", "Set Mob Difficulty", CmdParameterType.String, "MobDifficulty");
-            this.CreateCommand("deathEffect", "Set what happens when you die", CmdParameterType.String, "DeathEffect");
+            this.CreateCommand("deathMode", "Set the Death Mode", CmdParameterType.String, "DeathEffect");
 
 
             this.CreateCommand("ServerName", "Set what shows as the name in the server browser", CmdParameterType.String, "ServerName");
