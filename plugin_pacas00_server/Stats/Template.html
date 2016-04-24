@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Server Stats</title>
+    <meta http-equiv="refresh" content="120">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"crossorigin="anonymous" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"crossorigin="anonymous" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" >
+    <link rel="stylesheet" href="https://cdn.rawgit.com/pacas00/Pacas00-s-Dedicated-Server-Utils/master/plugin_pacas00_server/Stats/css/style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
+</head>
+<body>
+    <div class="well-sm" id="">
+        <img src="https://cdn.rawgit.com/pacas00/Pacas00-s-Dedicated-Server-Utils/master/plugin_pacas00_server/Stats/images/logo.png" alt="" height="150" width="380" >
+        <div class="divSummary" id="">
+            <h2>$ServerName</h2>
+            <h4>$WorldName</h4>
+            <p>$PlayerCount Players Online</p>
+            <p>Server Uptime</p>
+            <p>$Uptime</p>
+            <p>Total World Playtime</p>
+            <p>$PlayTime</p>
+            <br/>
+        </div>
+        <div class="divPower" id="">
+            <h3>Power</h3>
+            <table>
+                <tr>
+                    <td>Power Generated curr/Min</td>
+                    <td>$PowerPerMinCurr</td>
+                </tr>
+                <tr>
+                    <td>Power Generated last/Min</td>
+                    <td>$PowerPerMinLast</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Total Pyro Power</td>
+                    <td>$TotalPowerPyro</td>
+                </tr>
+                <tr>
+                    <td>Total Solar Power</td>
+                    <td>$TotalPowerSolar</td>
+                </tr>
+                <tr>
+                    <td>Total Jet Power</td>
+                    <td>$TotalPowerJet</td>
+                </tr>
+                <tr>
+                    <td>Total Power Generated</td>
+                    <td>$TotalPower</td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+        <div class="divResources" id="">
+            <h3>Resources </h3>
+            <table>
+                <tr>
+                    <td>Coal Burned</td>
+                    <td>$CoalBurned</td>
+                </tr>
+                <tr>
+                    <td>Bars This/Min</td>
+                    <td>$BarsMinCurr</td>
+                </tr>
+                <tr>
+                    <td>Bars Last/Min</td>
+                    <td>$BarsMinLast</td>
+                </tr>
+                <tr>
+                    <td>Total Ore</td>
+                    <td>$TotalOre</td>
+                </tr>
+                <tr>
+                    <td>Total Bars</td>
+                    <td>$TotalBars</td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+        <div class="divThreat" id="">
+            <h3>Threat</h3>
+            <p>$AttackState</p>
+            <p>Threat $Threat%</p>
+            <br/>
+            <table>
+                <tr>
+                    <td>Total Waves Seen</td>
+                    <td>$Waves</td>
+                </tr>
+                <tr>
+                    <td>Total Waves Losses</td>
+                    <td>$Losses</td>
+                </tr>
+                <tr>
+                    <td>Total Kills</td>
+                    <td>$Kills</td>
+                </tr>
+            </table>
+            <br/>
+        </div>
+    </div>
+</body>
+</html>
