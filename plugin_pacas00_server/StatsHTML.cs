@@ -13,10 +13,7 @@ namespace plugin_pacas00_server
     {
         public const string TemplateURL = "https://cdn.rawgit.com/pacas00/Pacas00-s-Dedicated-Server-Utils/master/plugin_pacas00_server/Stats/Template.html";
 
-        static float mrPeakOreMin = 0f;
-        static float mrPeakBarsMin = 0f;
-
-
+ 
         private static string prettyfloat(float count, string toStringParams = "F0")
         {
             string s = "";
@@ -41,62 +38,6 @@ namespace plugin_pacas00_server
                 }
             }
         }
-
-        //        // 
-        //$ServerName
-        //$WorldName
-        //$PlayerCount
-
-        //Server Uptime
-        //$Uptime
-
-        //Total World Playtime
-        //$PlayTime
-
-        //Power /Sec
-        //$PowerPerSec
-
-        //Total Pyro Power
-        //$TotalPowerPyro
-
-        //Total Solar Power
-        //$TotalPowerSolar
-
-        //Total Jet Power
-        //$TotalPowerJet
-
-        //Total Power Generated
-        //$TotalPower
-
-        //Coal Burned
-        //$ResCoalBurned
-
-        //Bars This/Min
-        //$ResBarsMinCurr
-
-        //Bars Last/Min
-        //$ResBarsMinLast
-
-        //Total Ore
-        //$ResTotalOre
-
-        //Total Bars
-        //$ResTotalBars
-
-        //$AttackState(Under Attack! or blank)
-        //$Threat(%)
-
-        //Total Waves Seen
-        //$Waves
-
-        //Total Waves Losses
-        //$Losses
-
-        //Total Kills
-        //$Kills
-        //        //
-
-
 
         public static void GenerateHTML()
         {
@@ -129,14 +70,10 @@ namespace plugin_pacas00_server
             }
 
             int seconds = (int)GameManager.mrTotalServerTime;
-            //int totalSeconds = (int)WorldScript.instance.mWorldData.mrWorldTimePlayed;
-            int totalSeconds = (int) GameManager.mrTotalPowerGenerated;
+            int totalSeconds = (int)WorldScript.instance.mWorldData.mrWorldTimePlayed;
 
-
-
-
-            string serverUptime = string.Format("{0} Days, {1} Hr, {2} Min, {3} Sec", seconds / (3600 * 24), (seconds / 3600) % 24, (seconds / 60) % 60, seconds % 60);
-            string worldPlayTime = string.Format("{0} Days, {1} Hr, {2} Min, {3} Sec", totalSeconds / (3600 * 24), (totalSeconds / 3600) % 24, (totalSeconds / 60) % 60, totalSeconds % 60);
+            string serverUptime = string.Format("{0}d, {1}h, {2}m, {3}s", seconds / (3600 * 24), (seconds / 3600) % 24, (seconds / 60) % 60, seconds % 60);
+            string worldPlayTime = string.Format("{0}d, {1}h, {2}m, {3}s", totalSeconds / (3600 * 24), (totalSeconds / 3600) % 24, (totalSeconds / 60) % 60, totalSeconds % 60);
 
 			//The holobase has different values, in since the holobase isnt initalised on the dedicated server, i cannot use refection to read the labels,
             //so, the following is a modified copy paste to get the correct values.
@@ -152,7 +89,7 @@ namespace plugin_pacas00_server
             string Power_Sec_Label = "";
             string Total_Power_Label = "";
 
-
+            //Holobase Code - From UpdateGUI
             float num = (float)GameManager.mnOresLastMin;
             Ores_Count_Label = GameManager.mnTotalOre.ToString();
             Ores_Overlay_Label = num.ToString("F0") + " ore/min"; //Ores Min
