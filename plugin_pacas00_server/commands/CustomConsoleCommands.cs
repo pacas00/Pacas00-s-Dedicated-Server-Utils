@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static plugin_pacas00_server.UtilClass;
 
-namespace plugin_pacas00_server.GameInteractingClasses
+namespace plugin_pacas00_server.commands
 {
     class CustomConsoleCommands : FortressCraftMod
     {

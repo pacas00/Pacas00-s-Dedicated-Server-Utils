@@ -1,4 +1,4 @@
-﻿using plugin_pacas00_server.GameInteractingClasses;
+﻿using plugin_pacas00_server.commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +25,9 @@ namespace plugin_pacas00_server
         public static int triggerCounter = 0;
 
 #if DEBUG
-        public static int triggerCounterMax = LFU_Updates_Per_Second * 15; //debug fast update every 15 seconds
+        public static int triggerCounterMax = LFU_Updates_Per_Second * 15; //debug; fast update every 15 seconds
 #else
-        public static int triggerCounterMax = LFU_Updates_Per_Second * 60; //release update every 1 mins
+        public static int triggerCounterMax = LFU_Updates_Per_Second * 60; //release; update every 1 mins
 #endif
 
         bool networkSetupComplete = false;
@@ -41,8 +41,6 @@ namespace plugin_pacas00_server
                 {
                     if (WorldScript.instance.mWorldData != null)
                     {
-                        worldSetupComplete = true;
-                        WorldSettings.Setup();
                         Settings.SaveSettings();
                     }
                 }
@@ -88,7 +86,7 @@ namespace plugin_pacas00_server
                     if (Settings.Instance.settings.statsEnabled == 1)
                     {
                         WriteLine("Updating Stats");
-                        GameStats.GenerateHTML();
+                        StatsHTML.GenerateHTML();
                     }
                 }
                 catch (Exception e)

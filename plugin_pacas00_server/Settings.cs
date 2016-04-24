@@ -1,5 +1,4 @@
-﻿using plugin_pacas00_server.GameInteractingClasses;
-using plugin_pacas00_server.GameInteractingClasses.Enums;
+﻿using plugin_pacas00_server.commands;
 using System;
 using System.Collections.Generic;
 using System.IO;

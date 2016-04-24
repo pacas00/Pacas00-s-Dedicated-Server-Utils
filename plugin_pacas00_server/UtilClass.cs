@@ -26,8 +26,10 @@ namespace plugin_pacas00_server
             ServerConsole.DoServerString(UtilClass.modName + ": " + f);
         }
 
-
-
-
+        internal static void WriteLine(Exception ex)
+        {
+            ServerConsole.DoServerString(UtilClass.modName + ": " + ex.Message);
+            ServerConsole.DoServerString(ex.StackTrace);
+        }
     }
 }
