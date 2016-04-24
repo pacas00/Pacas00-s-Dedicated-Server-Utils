@@ -41,6 +41,7 @@ namespace plugin_pacas00_server
                 {
                     if (WorldScript.instance.mWorldData != null)
                     {
+						worldSetupComplete = true;
                         Settings.SaveSettings();
                     }
                 }
