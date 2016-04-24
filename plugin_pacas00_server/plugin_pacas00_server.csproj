@@ -65,6 +65,7 @@
     <Content Include="Stats\images\logo.png" />
     <Content Include="Stats\images\logo_lg.png" />
     <Content Include="Stats\images\Note_on_Logos.txt" />
+    <None Include="Stats\Readme.md" />
     <Content Include="Stats\Template.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
