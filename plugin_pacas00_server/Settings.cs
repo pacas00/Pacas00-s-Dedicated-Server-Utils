@@ -34,9 +34,9 @@ namespace plugin_pacas00_server
 
         public static void ApplyServerSettings()
         {
+            if (NetworkManager.instance == null || NetworkManager.instance.mServerThread == null) return;
             NetworkManager.instance.mServerThread.mServerName = instance.settings.ServerName;
             NetworkManager.instance.mServerThread.mnMaxPlayerCount = instance.settings.MaxPlayerCount;
-            //NetworkServerThread.SegmentSendDelay = 1f / (float)Settings.Instance.settings.netRate;
         }
 
         //Static Above
@@ -144,9 +144,9 @@ namespace plugin_pacas00_server
                 {
                     {
                         writer.WriteLine("");
-                        writer.WriteLine("# -----------------------------");
-                        writer.WriteLine("# - Dedicated Server Settings -");
-                        writer.WriteLine("# -----------------------------");
+                        writer.WriteLine("# -------------------");
+                        writer.WriteLine("# - Server Settings -");
+                        writer.WriteLine("# -------------------");
                         writer.WriteLine("");
                         writer.WriteLine("#ServerName - Server Name to show in Server Browser");
                         writer.WriteLine("ServerName" + "=" + settings.ServerName);

@@ -86,7 +86,6 @@ namespace plugin_pacas00_server
 
                     if (Settings.Instance.settings.statsEnabled == 1)
                     {
-                        WriteLine("Updating Stats");
                         StatsHTML.GenerateHTML();
                     }
                 }
