@@ -17,7 +17,7 @@ namespace plugin_pacas00_server
 
         public plugin_pacas00_server()
         {
-            
+
         }
 
         public static int LFU_Updates_Per_Second = 5; // assuming that the LFU updates happen 5 times a second.
@@ -36,7 +36,7 @@ namespace plugin_pacas00_server
         
         public override void LowFrequencyUpdate()
         {
-            if (worldSetupComplete == false)
+             if (worldSetupComplete == false)
                 if (WorldScript.instance != null)
                 {
                     if (WorldScript.instance.mWorldData != null)

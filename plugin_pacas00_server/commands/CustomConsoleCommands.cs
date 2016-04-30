@@ -24,13 +24,37 @@ namespace plugin_pacas00_server.commands
             this.CreateCommand("ServerName", "Set what shows as the name in the server browser", CmdParameterType.String, "ServerName");
             this.CreateCommand("MaxPlayers", "Set Server's Max Players", CmdParameterType.String, "MaxPlayers");
 
-            this.CreateCommand("addRP", "Add Research Points", CmdParameterType.String, "AddResearchPoints");
+            //this.CreateCommand("SharedResearch", "Set Server's Research as shared", CmdParameterType.String, "SharedResearch");
+
+
         }
 
         public static void SaveWorldSettings()
         {
             DifficultySettings.SetSettingsFromWorldData(WorldScript.instance.mWorldData);
             WorldScript.instance.SaveWorldSettings();
+        }
+        private void SharedResearch(string parameters)
+        {
+            if (!(WorldScript.mbIsServer == true))
+            {
+
+                //We only run commands on the server.
+                global::Console.LogTargetFunction("Only the Server can run this command.", ConsoleMessageType.Trace);
+                return;
+            }
+
+            bool old = PlayerResearch.mbShareResearch;
+            PlayerResearch.mbShareResearch = old;
+
+
+            Settings.Instance.settings.ServerName = parameters;
+
+            Settings.SaveSettings();
+            Settings.ApplyServerSettings();
+
+            global::Console.LogTargetFunction("Set Shared Research to [" + !old + "].", ConsoleMessageType.Trace);
+
         }
 
         private void ServerName(string parameters)
@@ -256,28 +280,6 @@ namespace plugin_pacas00_server.commands
             else
             {
                 global::Console.LogTargetFunction("Invalid Value [" + parameters + "], Only 0 (Fast) and 1 (Slow) are supported", ConsoleMessageType.Trace);
-            }
-        }
-
-        private void AddResearchPoints(string parameters)
-        {
-            if (!(WorldScript.mbIsServer == true))
-            {
-
-                //We only run commands on the server.
-                global::Console.LogTargetFunction("Only the Dedicated Server can run this command.", ConsoleMessageType.Trace);
-                return;
-            }
-
-            int num = -1;
-            if (int.TryParse(parameters, out num))
-            {
-                PlayerResearch.mSharedResearch.GiveResearchPoints(num);
-                global::Console.LogTargetFunction("Added [" + parameters + "] Research Points.", ConsoleMessageType.Trace);
-            }
-            else
-            {
-                global::Console.LogTargetFunction("Invalid Value [" + parameters + "], Only numbers are supported", ConsoleMessageType.Trace);
             }
         }
 

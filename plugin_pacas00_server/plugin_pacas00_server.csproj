@@ -79,7 +79,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "$(ProjectDir)modFolder\pacas00.server\1\"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "$(ProjectDir)modFolder\pacas00.server\1\"
+xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

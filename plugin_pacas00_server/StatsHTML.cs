@@ -13,7 +13,7 @@ namespace plugin_pacas00_server
     {
         public const string TemplateURL = "https://cdn.rawgit.com/pacas00/Pacas00-s-Dedicated-Server-Utils/master/plugin_pacas00_server/Stats/Template.html";
 
- 
+        //Modified version of SetLabel from the Holobsae code, to allow for holobase like floats with units
         private static string prettyfloat(float count, string toStringParams = "F0")
         {
             string s = "";
@@ -75,43 +75,6 @@ namespace plugin_pacas00_server
             string serverUptime = string.Format("{0}d, {1}h, {2}m, {3}s", seconds / (3600 * 24), (seconds / 3600) % 24, (seconds / 60) % 60, seconds % 60);
             string worldPlayTime = string.Format("{0}d, {1}h, {2}m, {3}s", totalSeconds / (3600 * 24), (totalSeconds / 3600) % 24, (totalSeconds / 60) % 60, totalSeconds % 60);
 
-			//The holobase has different values, in since the holobase isnt initalised on the dedicated server, i cannot use refection to read the labels,
-            //so, the following is a modified copy paste to get the correct values.
-            //These names refer to the label names and vars in Holobase.
-            string Ores_Count_Label = "";
-            string Ores_Overlay_Label = "";
-
-            string Bars_Count_Label = "";
-            string Bars_Overlay_Label = "";
-
-            float mrPeakPowerMin = 1f;
-
-            string Power_Sec_Label = "";
-            string Total_Power_Label = "";
-
-            //Holobase Code - From UpdateGUI
-            float num = (float)GameManager.mnOresLastMin;
-            Ores_Count_Label = GameManager.mnTotalOre.ToString();
-            Ores_Overlay_Label = num.ToString("F0") + " ore/min"; //Ores Min
-
-            float num2 = (float)GameManager.mnBarsLastMin;
-            Bars_Count_Label = GameManager.mnTotalBars.ToString();
-            Bars_Overlay_Label = num2.ToString("F0") + " bars/min"; //bars min
-
-            if (GameManager.mrTotalTimeSimulated > 0f)
-            {
-                float num3 = GameManager.mrTotalPowerGenerated / GameManager.mrTotalTimeSimulated;
-                if (num3 > mrPeakPowerMin)
-                {
-                    mrPeakPowerMin = num3;
-                }
-                Power_Sec_Label = num3.ToString("F2");
-                Total_Power_Label = prettyfloat(GameManager.mrTotalPowerGenerated);
-            }
-            string Total_Time = GameManager.mrTotalTimeSimulated.ToString("F2");
-			//
-			
-
             string newPage = template .Replace("$ServerName", NetworkManager.instance.mServerThread.mServerName)
 
                 .Replace("$WorldName", WorldScript.instance.mWorldData.mName)
@@ -120,18 +83,18 @@ namespace plugin_pacas00_server
                 .Replace("$Uptime", serverUptime)
                 .Replace("$PlayTime", worldPlayTime)
 
-                .Replace("$PowerPerSec", Power_Sec_Label)
+                .Replace("$PowerPerSec", (GameManager.mrTotalPowerGenerated / GameManager.mrTotalTimeSimulated).ToString("F2"))
                 .Replace("$TotalPowerPyro", prettyfloat(GameManager.mrTotalPyroPower, "F2"))
                 .Replace("$TotalPowerSolar", prettyfloat(GameManager.mrTotalSolarPower, "F2"))
                 .Replace("$TotalPowerJet", prettyfloat(GameManager.mrTotalJetPower, "F2"))
-                .Replace("$TotalPower", Total_Power_Label)
+                .Replace("$TotalPower", prettyfloat(GameManager.mrTotalPowerGenerated))
 
 
                 .Replace("$CoalBurned", prettyfloat(GameManager.mnCoalBurned))
-                .Replace("$OresMin", Ores_Overlay_Label)
-                .Replace("$BarsMin", Bars_Overlay_Label)
-                .Replace("$TotalOre", Ores_Count_Label)
-                .Replace("$TotalBars", Bars_Count_Label)
+                .Replace("$OresMin", GameManager.mnOresLastMin + " ores/min")
+                .Replace("$BarsMin", GameManager.mnBarsLastMin + " bars/min")
+                .Replace("$TotalOre", GameManager.mnTotalOre.ToString())
+                .Replace("$TotalBars", GameManager.mnTotalBars.ToString())
 
 
                 .Replace("$AttackState", AttackState)                
