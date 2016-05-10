@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace plugin_pacas00_server
 {
-    class UtilClass
+    public class UtilClass
     {
         public const string modName = "Pacas00's Server Utils";
         public const string modId = "pacas00.server";

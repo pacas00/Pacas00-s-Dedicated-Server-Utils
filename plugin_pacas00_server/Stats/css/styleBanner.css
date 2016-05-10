@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family: "Courier New", Courier, monospace;
+	font-size: small;
+	line-height: 4px;
+	height: 120px;
+	width: 560px;
+	background-color: #2b2a29;
+	color: #ded9d3;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: -10;
+    line-height: 0px;
+    color: inherit;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+div {
+
+}
+
+div.row {
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}

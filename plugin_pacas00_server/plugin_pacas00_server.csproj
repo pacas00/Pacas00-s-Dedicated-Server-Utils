@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -22,8 +22,8 @@
     <WarningLevel>4</WarningLevel>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="xcopy /Y &quot;$(TargetDir)\plugin_pacas00.server.dll&quot; &quot;$(ProjectDir)\modFolder\pacas00.server\1\&quot;" />
-        <Command type="AfterBuild" command="xcopy /Y &quot;$(TargetDir)\plugin_pacas00.server.dll&quot; &quot;C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\&quot;" />
+        <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;${ProjectDir}\modFolder\pacas00.server\1\&quot;" />
+        <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\&quot;" />
         <Command type="Execute" command="&quot;..\..\..\..\..\..\..\Steam\SteamLibrary\steamapps\common\FortressCraft\64\Dedicated Server.bat&quot;" workingdir="C:\Steam\SteamLibrary\steamapps\common\FortressCraft\64" externalConsole="True" />
       </CustomCommands>
     </CustomCommands>
@@ -40,10 +40,6 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\..\Steam\SteamLibrary\steamapps\common\FortressCraft\64\FC_64_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Steam\SteamLibrary\steamapps\common\FortressCraft\64\FC_64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,9 +51,13 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\..\..\Steam\SteamLibrary\steamapps\common\FortressCraft\64\FC_64_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\..\..\Steam\SteamLibrary\steamapps\common\FortressCraft\64\FC_64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="commands\CustomConsoleCommands.cs" />
+    <Compile Include="HTTPServ.cs" />
     <Compile Include="StatsHTML.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="plugin_pacas00_server.cs" />
@@ -79,8 +79,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "$(ProjectDir)modFolder\pacas00.server\1\"
-xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
@@ -93,14 +93,4 @@ xcopy /Y "$(TargetDir)plugin_pacas00.server.dll" "C:\Users\Peter\AppData\Local\P
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ProjectExtensions>
-    <MonoDevelop>
-      <Properties>
-        <Policies>
-          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
-          <CSharpFormattingPolicy IndentSwitchSection="True" NewLinesForBracesInProperties="True" NewLinesForBracesInAccessors="True" NewLinesForBracesInAnonymousMethods="True" NewLinesForBracesInControlBlocks="True" NewLinesForBracesInAnonymousTypes="True" NewLinesForBracesInObjectCollectionArrayInitializers="True" NewLinesForBracesInLambdaExpressionBody="True" NewLineForElse="True" NewLineForCatch="True" NewLineForFinally="True" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="False" SpaceAfterMethodCallName="False" SpaceBeforeOpenSquareBracket="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
-        </Policies>
-      </Properties>
-    </MonoDevelop>
-  </ProjectExtensions>
 </Project>

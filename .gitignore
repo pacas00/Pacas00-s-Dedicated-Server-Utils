@@ -4,3 +4,5 @@ plugin_pacas00_server/obj/
 plugin_pacas00_server/modFolder/pacas00.server.zip
 plugin_pacas00_server/plugin_pacas00_server.csproj.user
 plugin_pacas00_server.userprefs
+HTTPTestApp/bin/
+HTTPTestApp/obj/
