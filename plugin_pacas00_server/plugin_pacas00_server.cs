@@ -23,11 +23,8 @@ namespace plugin_pacas00_server
 		public static int LFU_Updates_Per_Second = 5; // assuming that the LFU updates happen 5 times a second.
 		public static int triggerCounter = 0;
 
-#if DEBUG
 		public static int triggerCounterMax = LFU_Updates_Per_Second * 15; //debug; fast update every 15 seconds
-#else
-        public static int triggerCounterMax = LFU_Updates_Per_Second * 60; //release; update every 1 mins
-#endif
+
 
 		bool networkSetupComplete = false;
 		bool worldSetupComplete = false;
@@ -56,10 +53,11 @@ namespace plugin_pacas00_server
 						Settings.ApplyServerSettings();
 
 						if(Settings.Instance.settings.HTTPServerEnabled == 1)
-
+						{
 							Directory.CreateDirectory(workingDir + Path.DirectorySeparatorChar + "webroot");
-						HTTPServer = new HTTPServ(workingDir + Path.DirectorySeparatorChar + "webroot", Settings.Instance.settings.HTTPServerPort);
-						HTTPServer.Start();
+							HTTPServer = new HTTPServ(workingDir + Path.DirectorySeparatorChar + "webroot", Settings.Instance.settings.HTTPServerPort);
+							HTTPServer.Start();
+						}
 					}
 				}
 
@@ -101,7 +99,7 @@ namespace plugin_pacas00_server
 						if(Settings.Instance.settings.statsMode == 1 || Settings.Instance.settings.statsMode == 2)
 						{
 							//Banner
-							StatsHTML.GenerateHTML("TemplateBanner.html", Settings.Instance.settings.StatsSaveFileName);
+							StatsHTML.GenerateHTML("TemplateBanner.html", Settings.Instance.settings.BannerSaveFileName);
 						}
 					}
 				}

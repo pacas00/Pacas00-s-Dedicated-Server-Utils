@@ -49,7 +49,7 @@ namespace plugin_pacas00_server
 			}
 			catch(IOException ioex)
 			{
-				UtilClass.WriteLine("Template not found, downloading...");
+				UtilClass.WriteLine(templateName + " not found, downloading default...");
 
 				using(var client = new WebClient())
 				{

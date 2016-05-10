@@ -214,7 +214,7 @@ namespace plugin_pacas00_server
 		public int statsEnabled = 0;
 		public int statsMode = 0; // 0 stats, 1 banner, 2 both
 
-		public string StatsSaveFileName = "index.html";
+		public string StatsSaveFileName = "stats.html";
 		public string BannerSaveFileName = "banner.html";
 		public string StatsSavePath = "$ModFolder$" + Path.DirectorySeparatorChar + "webroot";
 		public int HTTPServerEnabled = 0;

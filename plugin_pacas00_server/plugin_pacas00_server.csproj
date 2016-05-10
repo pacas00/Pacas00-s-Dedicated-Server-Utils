@@ -22,7 +22,7 @@
     <WarningLevel>4</WarningLevel>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;${ProjectDir}\modFolder\pacas00.server\1\&quot;" />
+        <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;${ProjectDir}\modFolder\pacas00.server\2\&quot;" />
         <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\&quot;" />
         <Command type="Execute" command="&quot;..\..\..\..\..\..\..\Steam\SteamLibrary\steamapps\common\FortressCraft\64\Dedicated Server.bat&quot;" workingdir="C:\Steam\SteamLibrary\steamapps\common\FortressCraft\64" externalConsole="True" />
       </CustomCommands>
@@ -35,6 +35,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;${ProjectDir}\modFolder\pacas00.server\2\&quot;" />
+        <Command type="AfterBuild" command="xcopy /Y &quot;${TargetDir}\plugin_pacas00.server.dll&quot; &quot;C:\Users\Peter\AppData\Local\ProjectorGames\FortressCraft\Mods\pacas00.server\1\&quot;" />
+        <Command type="AfterBuild" command="7za a pacas00.server.zip pacas00.server" workingdir="${ProjectDir}\modFolder\" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
